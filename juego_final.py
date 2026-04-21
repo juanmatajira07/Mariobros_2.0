@@ -142,7 +142,7 @@ class Alien:
             angle = math.atan2(dy, dx)
             
             # 3. Determinar la velocidad en X y Y basadas en el ángulo
-            speed = 7 
+            speed = 10
             vel_x = math.cos(angle) * speed
             vel_y = math.sin(angle) * speed
             
@@ -213,6 +213,10 @@ def main():
             # Comprobar si el jugador llegó a la meta
             if player.rect.colliderect(goal.rect):
                 level_complete = True
+            
+            #modificación para hacer al alien una amenaza si el jugador lo toca
+            if player.rect.colliderect(alien.rect):
+                player.rect.topleft = (50, HEIGHT - 100)
                 
             # Comprobar si el jugador cayó al vacío (por si modificas el suelo)
             if player.rect.top > HEIGHT:

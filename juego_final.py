@@ -142,7 +142,7 @@ class Alien:
             angle = math.atan2(dy, dx)
             
             # 3. Determinar la velocidad en X y Y basadas en el ángulo
-            speed = 10
+            speed = 7
             vel_x = math.cos(angle) * speed
             vel_y = math.sin(angle) * speed
             
@@ -150,7 +150,7 @@ class Alien:
             lasers.append(Laser(self.rect.centerx, self.rect.centery, vel_x, vel_y))
             
             # Reinicia el temporizador (90 frames = 1.5 segundos a 60 FPS)
-            self.shoot_cooldown = 40 
+            self.shoot_cooldown = 60 
         else:
             self.shoot_cooldown -= 1 # Reduce el tiempo de espera
 
